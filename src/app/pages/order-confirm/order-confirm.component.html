@@ -1,0 +1,94 @@
+<h2 class="page-title">Confirm Your Order</h2>
+
+<!-- Step Indicator -->
+<div class="stepper">
+  <div class="step">Cart</div>
+  <div class="step active">Address</div>
+  <div class="step">Payment</div>
+</div>
+<div class="step-line active"></div>
+
+<div class="container">
+
+  <!-- Address Form Card -->
+  <div class="card-modern mb-4">
+    <h4 class="mb-3">Delivery Address</h4>
+
+    <div class="row align-items-center mb-1">
+      <div class="col-md-2 fw-semibold text-muted">Name *</div>
+      <div class="col-md-4">
+        <input class="form-control"
+          [(ngModel)]="address.name" />
+      </div>
+      
+      <div class="col-md-2 text-muted fw-semibold">Phone *</div>
+      <div class="col-md-4">
+        <input class="form-control" [(ngModel)]="address.phone">
+      </div>
+
+      <div class="col-md-2 text-muted fw-semibold">Street *</div>
+      <div class="col-md-4">
+        <input class="form-control" [(ngModel)]="address.street">
+      </div>
+
+      <div class="col-md-2 text-muted fw-semibold">City *</div>
+      <div class="col-md-4">
+        <input class="form-control" [(ngModel)]="address.city">
+      </div>
+
+      <div class="col-md-2 text-muted fw-semibold">PIN *</div>
+      <div class="col-md-4">
+        <input class="form-control" [(ngModel)]="address.pin">
+      </div>
+    </div>
+  </div>
+
+  <!-- Items Summary Card -->
+  <div class="card-modern">
+    <h4>Your Items</h4>
+
+    <table class="table mt-3">
+      <tbody>
+        <tr *ngFor="let item of cart.cart">
+          <td><b>{{ item.food.name }}</b></td>
+          <td>x {{ item.qty }}</td>
+          <td class="text-end">₹{{ item.food.price * item.qty }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    
+    <div class="border-top pt-3 mt-3">
+
+  <div class="d-flex justify-content-between mb-2">
+    <span>Subtotal</span>
+    <span>₹{{ subTotal }}</span>
+  </div>
+
+  <div class="d-flex justify-content-between mb-2">
+    <span>Tax (5%)</span>
+    <span>₹{{ taxAmount }}</span>
+  </div>
+
+  <div class="d-flex justify-content-between mb-2">
+    <span>Delivery Charge</span>
+    <span>₹{{ deliveryCharge }}</span>
+  </div>
+
+  <hr>
+
+  <div class="d-flex justify-content-between fw-bold fs-4">
+    <span>Grand Total</span>
+    <span>₹{{ grandTotal }}</span>
+  </div>
+
+</div>
+
+
+    <button class="btn-primary-modern mt-4"
+            (click)="proceedToPayment()">
+      Proceed to Payment →
+    </button>
+  </div>
+
+</div>

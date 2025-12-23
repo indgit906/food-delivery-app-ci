@@ -1,0 +1,18 @@
+<h2 class="mb-3 text-center">Menu</h2>
+
+<div class="container mt-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col-md-4 mb-4" *ngFor="let f of foods">
+      <div class="card shadow-sm">
+        <img [src]="f.image" style="width: 100px; height: 100px" class="card-img-top food-img" />
+
+        <div class="card-body">
+          <h5>{{ f.name }}</h5>
+          <p class="text-muted small">{{ f.description }}</p>
+          <h5 class="text-success">₹{{ f.price }}</h5>
+          <button class="btn btn-success w-100" (click)="addToCart(f)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

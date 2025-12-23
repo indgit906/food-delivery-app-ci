@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.card-modern {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.btn-primary-modern {
+  background: #0066ff;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  padding: 12px;
+  width: 100%;
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step {
+  text-align: center;
+  flex: 1;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.step.active {
+  color: #0066ff;
+  font-weight: bold;
+}
+
+.step-line {
+  height: 3px;
+  background: #ccc;
+  margin: 0 10px 10px;
+  border-radius: 5px;
+}
+
+.step-line.active {
+  background: #0066ff;
+}

@@ -1,0 +1,39 @@
+.modal-overlay {
+  position: fixed;        // REQUIRED
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;          // REQUIRED
+}
+
+.modal-box {
+  background: #fff;
+  width: 360px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.qr-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.qr-wrapper img {
+  width: 220px;
+  height: 220px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}

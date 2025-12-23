@@ -1,0 +1,44 @@
+<h2 class="mb-4 text-center">Your Cart</h2>
+<div class="container mt-4">
+  <table class="table table-bordered" *ngIf="cart.cart.length > 0">
+    <thead class="table-light">
+      <tr>
+        <th>Food</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of cart.cart">
+        <td>{{ item.food.name }}</td>
+
+        <td>
+          <input
+            type="number"
+            class="form-control qty-input"
+            [(ngModel)]="item.qty"
+            (change)="cart.updateQty(item.food.id, item.qty)"
+            min="1"
+          />
+        </td>
+
+        <td>₹{{ item.food.price }}</td>
+        <td>₹{{ item.qty * item.food.price }}</td>
+
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="cart.remove(item.food.id)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert alert-info text-center" *ngIf="cart.cart.length === 0">Your cart is empty.</div>
+
+  <div *ngIf="cart.cart.length > 0" class="text-center mt-3">
+    <h3>Total: ₹{{ cart.total() }}</h3>
+    <button class="btn btn-primary w-50" (click)="checkout()">Checkout</button>
+  </div>
+</div>
